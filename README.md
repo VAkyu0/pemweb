@@ -1,88 +1,41 @@
-# **Absensi App**
+# **Website Absensi untuk Tugas Pemograman Web**
 
 Features
 
--   CRUD Positions (CRUD Jabatan/Posisi)
--   CRUD Users (Admin, Operator and Users (Employees))
--   CRUD Holidays (CRUD Hari Libur)
--   CRUD Attendances (Can have multiple attendances and can using only button or presence using QRCode)
--   Using Datatables (Powergrid livewire)
--   Can Export to Excel and CSV
--   and more...
+Aplikasi Absensi adalah sebuah aplikasi yang digunakan untuk mengelola kehadiran dan data karyawan. Aplikasi ini memiliki fitur-fitur sebagai berikut:
 
-## Cara Install di Local
+- CRUD Jabatan/Posisi
+- CRUD Pengguna (Admin, Operator, dan Pengguna (Karyawan))
+- CRUD Hari Libur
+- Absensi Kehadiran (Dapat memiliki banyak absensi dan dapat menggunakan tombol atau QR Code)
+- Menggunakan Datatables (Powergrid Livewire)
+- Dapat diekspor ke Excel dan CSV
+- Dan masih banyak lagi...
 
--   Hal yang harus dipersiapkan
-    -   git
-    -   composer
-    -   php v8.1
+### Langkah 1: Clone repositori melalui command-line (cmd, bash, atau yang lainnya)
+- git clone https://github.com/muhammadpauzi/absensi-app.git
 
-```sh
-# clone terlebih dahulu lewat cli (cmd, bash, atau yg lain)
-git clone https://github.com/muhammadpauzi/absensi-app.git
+### Langkah 2: Masuk ke folder aplikasi
+- cd absensi-app
 
-# masuk ke foldernya
-cd absensi-app
+### Langkah 3: Install semua paket
+- composer install
 
-# install semua package
-composer install
+### Langkah 4: Pilih salah satu langkah berikut:
+#### 1. Untuk Windows
+- copy .env.example .env
+#### 2. Untuk Unix (Ubuntu, Mac OS, dan lain-lain)
+- cp .env.example .env
 
-# pilih salah satu
-# 1. windows
-copy .env.example .env
-# 2. unix (ubuntu, mac os and others)
-cp .env.example .env
+### Langkah 5: Setelah itu, buka file .env dan atur pengaturan yang diperlukan, seperti nama database (DB_DATABASE), username, dan password
+#### Buat juga database baru melalui phpmyadmin atau command-line dengan nama sesuai dengan yang ada di file .env (DB_DATABASE)
+- php artisan key:generate
+- php artisan migrate
+- php artisan db:seed
+- php artisan serve
 
-# setelah itu, setting .env file seperti nama database (DB_DATABASE), username dan passwordnya
-# lalu buat database baru dari phpmyadmin atau cli langsung juga bisa dengan nama sesuai DB_DATABASE yang ada di file .env
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan serve
+### Langkah 6: Buka browser dengan URL: http://localhost:8000/
 
-# lalu buka browser dengan url: http://localhost:8000/
-```
+Jika Anda mengikuti langkah-langkah di atas dengan benar, aplikasi Absensi akan berjalan pada URL http://localhost:8000/ di browser Anda.
 
-## How to install/use (english)
-
--   Clone this repository
-
-```sh
-git clone https://github.com/muhammadpauzi/absensi-app.git
-# make sure you are in the folder
-cd absensi-app
-```
-
--   Install all packages
-
-```sh
-composer install
-```
-
--   Copy/rename file .env.example to .env
-
-```sh
-# windows
-copy .env.example .env
-# unix (ubuntu, mac os and others)
-cp .env.example .env
-```
-
--   Configure .env file
-    <br>
-    Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
-
--   Create database
-    <br>
-    Create a database according to the name in DB_DATABASE in the .env file
-
--   Run artisan commands
-
-```sh
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan serve
-```
-
--   And go to http://localhost:8000/
+Selamat mencoba!
